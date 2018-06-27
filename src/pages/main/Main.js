@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
+import { hot } from 'react-hot-loader';
 import { getImage } from '../../assets/images';
 import styles from './Main.css';
 
 
-class Main extends PureComponent {
+class MainPageComponent extends PureComponent {
     render() {
         return (
             <div className={styles.App}>
@@ -12,11 +13,16 @@ class Main extends PureComponent {
                     <h1 className={styles['App-title']}>Welcome to React</h1>
                 </header>
                 <p className={styles['App-intro']}>
-          To get started, edit <code>src/App.js</code> and save to reload.
+                    To get started, edit <code>src/App.js</code> and save to reload.
+                </p>
+                <p>
+                    This is a hot reload test!
                 </p>
             </div>
         );
     }
 }
+
+const Main = hot(module)(MainPageComponent);
 
 export { Main };
