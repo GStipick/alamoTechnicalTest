@@ -1,5 +1,40 @@
 {
+    "parser": "babel-eslint",
+    "extends": ["react-app", "airbnb-base"],
+    "plugins": ["import", "jsx-a11y", "react"],
     "rules": {
-
+        "comma-dangle": ["error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "never"
+            }
+        ],
+        "func-style": ["warn", "declaration", { "allowArrowFunctions": true }],
+        "function-paren-newline": ["error", { "minItems": 3 }],
+        "indent": ["error", 4],
+        "no-nested-ternary": ["warn"],
+        "no-param-reassign": ["error", { "props": false }],
+        "no-restricted-properties": ["warn"],
+        "no-underscore-dangle": ["off"],
+        "no-undef": ["warn"],
+        "object-shorthand": ["off", "methods"],
+        "quote-props": ["error", "as-needed", {
+            "keywords": false,
+            "unnecessary": true,
+            "numbers": true
+        }],
+        "class-methods-use-this": "off",
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "react/prop-types": ["error", { "skipUndeclared": true }],
+        "react/require-optimization": ["error"],
+        "import/exports-last": ["error"],
+        "import/newline-after-import": ["error", { "count": 2 }],
+        "import/no-named-as-default": ["warn"],
+        "import/order": ["error", { "newlines-between": "never" }],
+        "import/prefer-default-export": ["off"]
     }
 }
