@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import logo from '../../assets/logo.svg';
+import { getImage } from '../../assets/images';
 import styles from './Main.css';
 
 
@@ -8,7 +8,7 @@ class Main extends PureComponent {
         return (
             <div className={styles.App}>
                 <header className={styles['App-header']}>
-                    <img src={logo} className={styles['App-logo']} alt="logo" />
+                    <img src={getImage('logo')} className={styles['App-logo']} alt="logo" />
                     <h1 className={styles['App-title']}>Welcome to React</h1>
                 </header>
                 <p className={styles['App-intro']}>
