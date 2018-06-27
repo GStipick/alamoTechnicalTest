@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
-import logo from './logo.svg';
-import styles from './App.css';
+import logo from '../../assets/logo.svg';
+import styles from './Main.css';
 
 
-class App extends PureComponent {
+class Main extends PureComponent {
     render() {
         return (
             <div className={styles.App}>
@@ -19,4 +19,4 @@ class App extends PureComponent {
     }
 }
 
-export { App };
+export { Main };
