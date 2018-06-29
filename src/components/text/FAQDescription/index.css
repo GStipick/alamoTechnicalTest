@@ -1,0 +1,14 @@
+.faq-description-text {
+    font-family: FuturaStd;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.faq-description-text:not(:last-child){
+    margin-bottom: 16px;
+}

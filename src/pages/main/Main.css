@@ -1,23 +1,7 @@
-.App {
-  text-align: center;
+.header-section-background {
+    background-image: linear-gradient(120deg, #ff009d, #f5b324);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.faq-section-background {
+    background-color: #000000;
 }

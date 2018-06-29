@@ -1,0 +1,7 @@
+.header-padding {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom-width: 2px;
+    /* TODO: Convert to SASS/LESS and use color + opacity */
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+}
