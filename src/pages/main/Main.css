@@ -5,3 +5,15 @@
 .faq-section-background {
     background-color: #000000;
 }
+
+.rewards-card {
+    width: 410px;
+    height: 255px;
+    object-fit: contain;
+}
+
+.section-image {
+    width: 81px;
+    height: 80px;
+    object-fit: contain;
+}

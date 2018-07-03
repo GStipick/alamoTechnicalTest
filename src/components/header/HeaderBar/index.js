@@ -5,13 +5,31 @@ import styles from './index.css';
 
 
 export const HeaderBar = () => (
-    <header className={`columns ${styles['header-padding']}`}>
-        <div className="column is-narrow">
-            <img src={getImage('logo')} alt="Alamo Drafthouse Logo"/>
+    <nav
+        className={`navbar is-transparent ${styles['header-padding']}`}
+        aria-label="main navigation"
+    >
+        <div className="navbar-brand">
+            <img
+                src={getImage('logo')}
+                alt="Alamo Drafthouse Logo"
+                class={styles['header-logo']}
+            />
+            <a
+                role="button"
+                className="navbar-burger"
+                aria-label="menu"
+                aria-expanded="false"
+            >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-        <div className="column"></div>
-        <div className="column is-narrow">
-            <NavOptions />
+        <div className="navbar-menu">
+            <div className="navbar-end">
+                <NavOptions />
+            </div>
         </div>
-    </header>
+    </nav>
 );

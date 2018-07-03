@@ -1,10 +1,11 @@
-.nav-option-text {
+.callout-description-text {
+    max-width: 456px;
     font-family: 'Futura W01';
-    font-size: 16px;
+    font-size: 20px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: normal;
     color: #ffffff;
 }

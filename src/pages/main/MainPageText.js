@@ -24,3 +24,10 @@ export const faqQA = [
         ],
     },
 ];
+
+export const calloutText = {
+    description: [
+        'Biscuit dessert carrot cake chocolate macaroon sweet cotton candy fruitcake soufflé. Caramels jelly-o halvah soufflé. Chocolate bar jelly jelly beans jelly-o.',
+        'Carrot cake marshmallow halvah chocolate cake pudding sugar plum.',
+    ],
+};

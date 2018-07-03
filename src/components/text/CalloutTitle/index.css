@@ -1,11 +1,13 @@
-.faq-title-text {
+.callout-title-text {
     font-family: 'Futura W01';
-    font-size: 16px;
+    font-size: 48px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.5;
+    line-height: 1.33;
     letter-spacing: 1px;
+    text-align: center;
     color: #ffffff;
     text-transform: uppercase;
+    margin-bottom: 64px;
 }

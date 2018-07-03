@@ -7,7 +7,7 @@ export const CenteredContent = props => (
         id={props.id || ''}
         className={`columns is-centered ${props.backgroundClass}`}
     >
-        <section className={`column ${styles['content-container']}`}>
+        <section className={`column is-narrow ${styles['content-container']}`}>
             {props.children}
         </section>
     </div>
