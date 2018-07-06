@@ -11,6 +11,7 @@ export const TextInput = props => (
                 className={`input ${styles['form-text-input']}`}
                 type="text"
                 placeholder=""
+                onChange={props.onChange}
             />
         </div>
     </div>

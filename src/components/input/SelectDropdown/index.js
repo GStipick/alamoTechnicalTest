@@ -8,15 +8,19 @@ export const SelectDropdown = (props) => {
 
     if (props.selectOptions
     && Array.isArray(props.selectOptions)) {
-        const optionsToDisplay = props.selectOptions.map(option => <option>{option}</option>);
+        const optionsToDisplay = props.selectOptions.map(((option, index) => (
+            <option key={`${index}__${option}`} value={option}>
+                {option}
+            </option>
+        )));
 
         jsxReturn = (
             <div className={`field ${styles['form-field']}`}>
                 <InputLabel>{props.labelText}</InputLabel>
                 <div className="control">
                     <div className="select is-fullwidth">
-                        <select>
-                            <option />
+                        <select value={props.selectValue} onChange={props.onChange}>
+                            <option value='' />
                             {optionsToDisplay}
                         </select>
                     </div>

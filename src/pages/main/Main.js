@@ -4,14 +4,14 @@ import {
     HeaderBar,
     CenteredContent,
     NarrowContentWithImage,
-    FAQDescription,
-    FAQTitle,
     CalloutTitle,
     CalloutSubtitle,
     CalloutDescription,
     RaisedCard,
     TextInput,
     SelectDropdown,
+    FormButton,
+    QAGroup,
 } from '../../components';
 import { getImage } from '../../assets/images';
 import {
@@ -23,7 +23,73 @@ import {
 import styles from './Main.css';
 
 
+const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+
+const isValidEmailAddress = emailString => emailRegex.test(emailString);
+
 class MainPageComponent extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstNameText: '',
+            lastNameText: '',
+            emailAddress: '',
+            deviceType: '',
+            alamoLocation: '',
+            showingModalBool: false,
+            showingModalClass: '',
+            formButtonDisabledBool: true,
+        };
+        this.toggleModalHandler = this.toggleModalHandler.bind(this);
+        this.updateFirstName = this.updateFirstName.bind(this);
+        this.updateLastName = this.updateLastName.bind(this);
+        this.updateEmailAddress = this.updateEmailAddress.bind(this);
+        this.updateDeviceType = this.updateDeviceType.bind(this);
+        this.updateAlamoLocation = this.updateAlamoLocation.bind(this);
+    }
+
+    updateStateFromFormField = stateFieldString => (event) => {
+        this.setState({ [stateFieldString]: event.target.value });
+    }
+
+    updateFirstName = this.updateStateFromFormField('firstNameText');
+
+    updateLastName = this.updateStateFromFormField('lastNameText');
+
+    updateEmailAddress = this.updateStateFromFormField('emailAddress');
+
+    updateDeviceType = this.updateStateFromFormField('deviceType');
+
+    updateAlamoLocation = this.updateStateFromFormField('alamoLocation');
+
+    toggleModalHandler = () => {
+        this.setState((previousState) => {
+            const newShowingModalClass = !previousState.showingModalBool
+                ? 'is-active'
+                : '';
+
+            return {
+                showingModalBool: !previousState.showingModalBool,
+                showingModalClass: newShowingModalClass,
+            };
+        });
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        const isFormValid = (!!this.state.firstNameText
+        && !!this.state.lastNameText
+        && isValidEmailAddress(this.state.emailAddress)
+        && !!this.state.deviceType
+        && !!this.state.alamoLocation);
+
+        // Update state only if the form validation has changed
+        if (isFormValid !== !prevState.formButtonDisabledBool) {
+            this.setState({
+                formButtonDisabledBool: !isFormValid,
+            });
+        }
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -57,31 +123,46 @@ class MainPageComponent extends PureComponent {
                         </div>
                     </section>
                 </CenteredContent>
-                <CenteredContent id="waitlist">
+                <CenteredContent
+                    id="waitlist"
+                    backgroundClass={styles['waitlist-section-background']}
+                >
                     <NarrowContentWithImage
                         sectionImage='tabs.waitlist'
                         sectionImageAltText='waitlist-section-icon'
                     >
-                        <RaisedCard styleClasses={styles['narrow-content']}>
+                        <RaisedCard>
                             <TextInput
                                 labelText='First Name'
+                                onChange={this.updateFirstName}
                             />
                             <TextInput
                                 labelText='Last Name'
+                                onChange={this.updateLastName}
                             />
                             <TextInput
                                 labelText='Victory Email Address'
+                                onChange={this.updateEmailAddress}
                             />
                             <SelectDropdown
                                 labelText='Your Local Alamo'
                                 selectOptions={alamoLocations}
+                                selectValue={this.state.alamoLocation}
+                                onChange={this.updateAlamoLocation}
                             />
                             <SelectDropdown
                                 labelText='Mobile Phone Type'
                                 selectOptions={deviceTypes}
+                                selectValue={this.state.deviceType}
+                                onChange={this.updateDeviceType}
                             />
                             <div className={styles['form-button-container']}>
-                                <button className={styles['form-button']}>join waitlist</button>
+                                <FormButton
+                                    onClick={this.toggleModalHandler}
+                                    isDisabled={this.state.formButtonDisabledBool}
+                                >
+                                    join waitlist
+                                </FormButton>
                             </div>
                         </RaisedCard>
                     </ NarrowContentWithImage>
@@ -94,52 +175,35 @@ class MainPageComponent extends PureComponent {
                         sectionImage='tabs.faq'
                         sectionImageAltText='faq-section-icon'
                     >
-                        <div className={styles['faq-qa-group']}>
-                            <FAQTitle>
-                                {faqQA[0].question}
-                            </FAQTitle>
-                            <FAQDescription>
-                                {faqQA[0].answer[0]}
-                            </FAQDescription>
-                            <FAQDescription>
-                                {faqQA[0].answer[1]}
-                            </FAQDescription>
-                            <FAQDescription>
-                                {faqQA[0].answer[2]}
-                            </FAQDescription>
-                        </div>
-
-                        <div className={styles['faq-qa-group']}>
-                            <FAQTitle>
-                                {faqQA[1].question}
-                            </FAQTitle>
-                            <FAQDescription>
-                                {faqQA[1].answer[0]}
-                            </FAQDescription>
-                            <FAQDescription>
-                                {faqQA[1].answer[1]}
-                            </FAQDescription>
-                            <FAQDescription>
-                                {faqQA[1].answer[2]}
-                            </FAQDescription>
-                        </div>
-
-                        <div className={styles['faq-qa-group']}>
-                            <FAQTitle>
-                                {faqQA[2].question}
-                            </FAQTitle>
-                            <FAQDescription>
-                                {faqQA[2].answer[0]}
-                            </FAQDescription>
-                            <FAQDescription>
-                                {faqQA[2].answer[1]}
-                            </FAQDescription>
-                            <FAQDescription>
-                                {faqQA[2].answer[2]}
-                            </FAQDescription>
-                        </div>
+                        <QAGroup qaObject={faqQA[0]} />
+                        <QAGroup qaObject={faqQA[1]} />
+                        <QAGroup qaObject={faqQA[2]} />
                     </ NarrowContentWithImage>
                 </CenteredContent>
+                <div className={`modal ${this.state.showingModalClass}`}>
+                    <div className="modal-background" onClick={this.toggleModalHandler} />
+                    <div className="modal-content">
+                        <RaisedCard>
+                            <div className={`${styles['hero-content-image-container']} ${styles['no-margin']}`}>
+                                <img
+                                    src={getImage('rewardsCard')}
+                                    className={styles['rewards-card']}
+                                    alt="Rewards Card"
+                                />
+                            </div>
+                            <div className={`${styles['hero-content-text-container']}`}>
+                                <h1>Thank you for joining the waitlist!</h1>
+                                <h1>This demo has been brought to you by:</h1>
+                                <h1>George Stipick</h1>
+                            </div>
+                        </RaisedCard>
+                    </div>
+                    <button
+                        className="modal-close is-large"
+                        onClick={this.toggleModalHandler}
+                        aria-label="close"
+                    />
+                </div>
             </React.Fragment>
         );
     }

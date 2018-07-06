@@ -1,0 +1,22 @@
+.form-button {
+    width: 183px;
+    height: 40px;
+    background-color: #f0b323;
+    border: none;
+    border-radius: 3px;
+    
+    text-transform: uppercase;
+    font-family: 'Futura W01';
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #141310;
+}
+
+.is-disabled-false {
+    background-color: grey;
+}
