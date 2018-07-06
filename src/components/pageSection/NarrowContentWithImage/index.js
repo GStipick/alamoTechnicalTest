@@ -4,7 +4,7 @@ import styles from './index.css';
 
 
 export const NarrowContentWithImage = props => (
-    <section className="columns">
+    <section className="columns is-desktop">
         <div className="column">
             <div className={`${styles['image-container']}`}>
                 <img

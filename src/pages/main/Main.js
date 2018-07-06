@@ -38,18 +38,19 @@ class MainPageComponent extends PureComponent {
                     <CalloutTitle>
                         Cupcake ipsum dolor
                     </CalloutTitle>
-                    <section className="columns is-centered">
-                        <div className="column is-narrow">
+                    <section className="columns is-desktop is-centered">
+                        <div className={`column is-narrow ${styles['hero-content-image-container']}`}>
                             <img
                                 src={getImage('rewardsCard')}
                                 className={styles['rewards-card']}
                                 alt="Rewards Card"
                             />
                         </div>
-                        <div className="column is-narrow">
+                        <div className={`column is-narrow ${styles['hero-content-text-container']}`}>
                             <CalloutDescription>
                                 {calloutText.description[0]}
                             </CalloutDescription>
+                            <br />
                             <CalloutDescription>
                                 {calloutText.description[1]}
                             </CalloutDescription>
@@ -79,8 +80,8 @@ class MainPageComponent extends PureComponent {
                                 labelText='Mobile Phone Type'
                                 selectOptions={deviceTypes}
                             />
-                            <div className="control">
-                                <button className="button is-primary">join waitlist</button>
+                            <div className={styles['form-button-container']}>
+                                <button className={styles['form-button']}>join waitlist</button>
                             </div>
                         </RaisedCard>
                     </ NarrowContentWithImage>
@@ -93,44 +94,50 @@ class MainPageComponent extends PureComponent {
                         sectionImage='tabs.faq'
                         sectionImageAltText='faq-section-icon'
                     >
-                        <FAQTitle>
-                            {faqQA[0].question}
-                        </FAQTitle>
-                        <FAQDescription>
-                            {faqQA[0].answer[0]}
-                        </FAQDescription>
-                        <FAQDescription>
-                            {faqQA[0].answer[1]}
-                        </FAQDescription>
-                        <FAQDescription>
-                            {faqQA[0].answer[2]}
-                        </FAQDescription>
+                        <div className={styles['faq-qa-group']}>
+                            <FAQTitle>
+                                {faqQA[0].question}
+                            </FAQTitle>
+                            <FAQDescription>
+                                {faqQA[0].answer[0]}
+                            </FAQDescription>
+                            <FAQDescription>
+                                {faqQA[0].answer[1]}
+                            </FAQDescription>
+                            <FAQDescription>
+                                {faqQA[0].answer[2]}
+                            </FAQDescription>
+                        </div>
 
-                        <FAQTitle>
-                            {faqQA[1].question}
-                        </FAQTitle>
-                        <FAQDescription>
-                            {faqQA[1].answer[0]}
-                        </FAQDescription>
-                        <FAQDescription>
-                            {faqQA[1].answer[1]}
-                        </FAQDescription>
-                        <FAQDescription>
-                            {faqQA[1].answer[2]}
-                        </FAQDescription>
+                        <div className={styles['faq-qa-group']}>
+                            <FAQTitle>
+                                {faqQA[1].question}
+                            </FAQTitle>
+                            <FAQDescription>
+                                {faqQA[1].answer[0]}
+                            </FAQDescription>
+                            <FAQDescription>
+                                {faqQA[1].answer[1]}
+                            </FAQDescription>
+                            <FAQDescription>
+                                {faqQA[1].answer[2]}
+                            </FAQDescription>
+                        </div>
 
-                        <FAQTitle>
-                            {faqQA[2].question}
-                        </FAQTitle>
-                        <FAQDescription>
-                            {faqQA[2].answer[0]}
-                        </FAQDescription>
-                        <FAQDescription>
-                            {faqQA[2].answer[1]}
-                        </FAQDescription>
-                        <FAQDescription>
-                            {faqQA[2].answer[2]}
-                        </FAQDescription>
+                        <div className={styles['faq-qa-group']}>
+                            <FAQTitle>
+                                {faqQA[2].question}
+                            </FAQTitle>
+                            <FAQDescription>
+                                {faqQA[2].answer[0]}
+                            </FAQDescription>
+                            <FAQDescription>
+                                {faqQA[2].answer[1]}
+                            </FAQDescription>
+                            <FAQDescription>
+                                {faqQA[2].answer[2]}
+                            </FAQDescription>
+                        </div>
                     </ NarrowContentWithImage>
                 </CenteredContent>
             </React.Fragment>

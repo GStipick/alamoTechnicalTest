@@ -1,16 +1,67 @@
 .header-section-background {
     background-image: linear-gradient(120deg, #ff009d, #f5b324);
+    padding-bottom: 216px;
 }
 
 .faq-section-background {
     background-color: #000000;
+    padding-top: 128px;
+    padding-bottom: 104px;
 }
 
 .rewards-card {
     object-fit: contain;
 }
 
-.narrow-content {
-    max-width: 552px;
-    margin: auto;
+.hero-content-image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-content-text-container {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (min-width: 1088px) {
+    .hero-content-image-container {
+        margin-right: 64px;
+    }
+}
+
+@media (max-width: 1087px) {
+    .hero-content-image-container {
+        margin-bottom: 48px;
+    }
+}
+
+.form-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-button {
+    width: 183px;
+    height: 40px;
+    background-color: #f0b323;
+    border: none;
+    border-radius: 3px;
+    
+    text-transform: uppercase;
+    font-family: 'Futura W01';
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #141310;
+}
+
+.faq-qa-group {
+    margin-bottom: 40px;
 }

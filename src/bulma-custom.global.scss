@@ -6,3 +6,11 @@ $column-gap: 0px;
 .columns:not(:last-child) {
     margin-bottom: initial;
 }
+
+.field:not(:last-child) {
+    margin-bottom: initial;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+	border-color: #000;
+}

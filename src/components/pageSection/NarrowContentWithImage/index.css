@@ -9,16 +9,22 @@
     padding-right: 24px;
 }
 
-@media (min-width: 769px) {
-    .section-content {
-        min-width: 552px;
-    }
+.section-content {
+    width: 100%;
+    max-width: 552px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1087px) {
     .image-container {
         justify-content: center;
         padding-top: 24px;
         padding-bottom: 24px;
+    }
+
+    .section-content {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

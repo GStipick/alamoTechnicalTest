@@ -8,4 +8,15 @@
     line-height: 1.6;
     letter-spacing: normal;
     color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.callout-description-text:last-child{
+    margin-bottom: initial;
+}
+
+@media (max-width: 1087px) {
+    .callout-description-text {
+        text-align: center;
+    }
 }

@@ -1,5 +1,4 @@
 .faq-description-text {
-    max-width: 552px;
     font-family: 'Futura W01';
     font-size: 14px;
     font-weight: normal;
@@ -12,5 +11,5 @@
 }
 
 .faq-description-text:not(:last-child){
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
