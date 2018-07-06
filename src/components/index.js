@@ -1,4 +1,4 @@
-export { CenteredContent } from './pageSection';
+export { CenteredContent, NarrowContentWithImage } from './pageSection';
 export {
     NavOption,
     FAQDescription,
@@ -6,5 +6,8 @@ export {
     CalloutTitle,
     CalloutSubtitle,
     CalloutDescription,
+    InputLabel,
 } from './text';
 export { HeaderBar, NavOptions } from './header';
+export { RaisedCard } from './card';
+export { TextInput, SelectDropdown } from './input';

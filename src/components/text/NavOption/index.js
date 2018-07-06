@@ -8,7 +8,7 @@ export const NavOption = (props) => {
         if (props.link.charAt(0) === '#') { // Anchor Link
             navOptionReturn = (
                 <a
-                    className={`navbar-item ${styles['nav-option-text']} ${props.classes || ''}`}
+                    className={`${styles['nav-option-text']} ${props.classes || ''}`}
                     href={props.link}
                 >
                     {props.children}
@@ -17,7 +17,7 @@ export const NavOption = (props) => {
         } else { // External Link
             navOptionReturn = (
                 <a
-                    className={`navbar-item ${styles['nav-option-text']} ${props.classes || ''}`}
+                    className={`${styles['nav-option-text']} ${props.classes || ''}`}
                     href={props.link}
                     target="_blank"
                 >

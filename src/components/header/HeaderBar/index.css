@@ -4,7 +4,7 @@
     border-bottom-width: 2px;
     border-bottom-style: solid;
     background-color: transparent;
-    margin-bottom: 80px;
+    margin-bottom: 80px !important;
     /* TODO: Convert to SASS/LESS and use color + opacity */
     border-bottom-color: rgba(255, 255, 255, 0.5);
 }

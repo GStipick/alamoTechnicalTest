@@ -31,3 +31,32 @@ export const calloutText = {
         'Carrot cake marshmallow halvah chocolate cake pudding sugar plum.',
     ],
 };
+
+export const alamoLocations = [
+    'Austin',
+    'Charlottesville',
+    'Corpus Christi',
+    'Dallas/Fort Worth',
+    'Denver Area',
+    'El Paso',
+    'Houston',
+    'Kansas City',
+    'Laredo',
+    'Los Angeles',
+    'Lubbock',
+    'New Braunfels',
+    'New York City',
+    'Northern Virginia',
+    'Omaha',
+    'Phoenix',
+    'Raleigh',
+    'San Antonio',
+    'San Francisco',
+    'Springfield',
+    'St. Louis',
+    'Twin Cities',
+    'Winchester',
+    'Yonkers',
+];
+
+export const deviceTypes = ['iOS', 'Android'];

@@ -164,14 +164,16 @@ module.exports = {
                     // use the "style" loader inside the async code so CSS from them won't be
                     // in the main CSS file.
                     {
-                        test: /\.min\.css$/,
-                        include: paths.appNodeModules,
+                        test: /\.global\.css$/,
+                        exclude: paths.appNodeModules,
                         use: [
                             require.resolve('style-loader'),
                             {
                                 loader: require.resolve('css-loader'),
                                 options: {
                                     importLoaders: 1,
+                                    minimize: true,
+                                    sourceMap: shouldUseSourceMap,
                                 },
                             },
                             {

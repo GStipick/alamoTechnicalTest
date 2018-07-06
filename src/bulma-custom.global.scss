@@ -1,0 +1,8 @@
+// Customizing Bulma SASS files
+$column-gap: 0px;
+
+@import "../node_modules/bulma/bulma";
+
+.columns:not(:last-child) {
+    margin-bottom: initial;
+}

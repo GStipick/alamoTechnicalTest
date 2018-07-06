@@ -1,3 +1,18 @@
 .content-container {
     max-width: 1128px;
 }
+
+/* Ensure padding for when we go below the 1128 threshold */
+@media (max-width: 1160px) {
+    .content-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (min-width: 1161px) {
+    .content-container {
+        padding-left: initial;
+        padding-right: initial;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // Add global+body css
-import 'bulma/css/bulma.min.css';
+import './bulma-custom.global.css';
 import './index.css';
 import { Main } from './pages';
 import { registerServiceWorker } from './registerServiceWorker';

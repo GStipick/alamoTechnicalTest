@@ -1,13 +1,12 @@
-.faq-title-text {
-    max-width: 552px;
+.input-label {
+    opacity: 0.38;
     font-family: 'Futura W01';
-    font-size: 16px;
+    font-size: 10px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: 1px;
-    color: #ffffff;
+    color: #141310;
     text-transform: uppercase;
-    margin: auto;
 }
