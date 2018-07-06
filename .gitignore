@@ -20,5 +20,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# custom Bulma config compiled to css
-bulma-custom.global.css
+# all CSS files (since we are using SCSS)
+*.css

@@ -1,9 +1,10 @@
 # Installation
 
-1. Clone the repo, and ensure you have `node.js`
-2. Move to the root directory of the project
-3. Run `npm install` or `yarn install` (if you have yarn)
-4. Run the following commands below!
+1. Clone the repo
+1. Ensure you have `node.js` version 9+s
+1. Move to the root directory of the project
+1. Run `npm install` or `yarn install` (if you have yarn)
+1. Run the following commands below!
 
 
 # Available Scripts
@@ -28,3 +29,8 @@ The build is minified and the filenames include the hashes.
 ### ```npm run lint```
 
 This will run the `eslint` configuration and output any errors found
+
+# Acknowledgements
+
+This was created using [create-react-app](https://github.com/facebook/create-react-app/tree/master)!<br>
+Please consult the github page to see browser support and shimming.
